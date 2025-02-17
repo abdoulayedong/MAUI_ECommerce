@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_ECommerce.Pages.RegisterPage"
+             xmlns:cc="clr-namespace:MAUI_ECommerce.Pages.Controls"
+             Title="RegisterPage">
+    <VerticalStackLayout>
+        <Image Source="app_icon.svg" HeightRequest="72" WidthRequest="72" Margin="0,111,0,16"/>
+
+        <Label Text="Let’s Get Started" FontFamily="PoppinsBold" FontSize="16" CharacterSpacing="0.5"
+               HorizontalTextAlignment="Center"/>
+
+        <Label Text="Create an new account" FontFamily="PoppinsRegular" FontSize="12" CharacterSpacing="0.5"
+               HorizontalTextAlignment="Center" TextColor="#9098B1" Margin="0,8,0,28"/>
+
+        <Border Margin="16,0,16,8" StrokeShape="RoundRectangle 5" Stroke="#EBF0FF">
+            <Grid ColumnDefinitions="50,*" RowDefinitions="1,auto,1" Margin="0">
+                <StackLayout Spacing="0" Padding="2, 4.5" Margin="12,0" Grid.Row="1" VerticalOptions="Center">
+                    <Image Grid.Column="0" Source="user.svg" HeightRequest="15.5" WidthRequest="20"
+                           HorizontalOptions="Start"/>
+                </StackLayout>
+                    
+                <cc:BorderlessEntry Grid.Column="1" Placeholder="Full Name" HorizontalOptions="Fill"
+                                    FontFamily="PoppinsBold" FontSize="12" CharacterSpacing="0.5"  Grid.Row="1"
+                                    />
+            </Grid>
+        </Border>
+
+        <Border Margin="16,0,16,8" StrokeShape="RoundRectangle 5" Stroke="#EBF0FF">
+            <Grid ColumnDefinitions="50,*">
+                <Image Grid.Column="0" Source="message.svg" HeightRequest="24" WidthRequest="24"
+                       Margin="12" HorizontalOptions="Start"/>
+                <cc:BorderlessEntry Grid.Column="1" Placeholder="Your Email" HorizontalOptions="Fill"
+                            FontFamily="PoppinsBold" FontSize="12" CharacterSpacing="0.5" 
+                            VerticalTextAlignment="Center" VerticalOptions="Center"/>
+            </Grid>
+        </Border>
+
+        <Border Margin="16,0,16,8" StrokeShape="RoundRectangle 5" Stroke="#EBF0FF">
+            <Grid ColumnDefinitions="50,*">
+                <Image Grid.Column="0" Source="password.svg" HeightRequest="24" WidthRequest="24"
+                       Margin="12" HorizontalOptions="Start"/>
+                <cc:BorderlessEntry Grid.Column="1" Placeholder="Password" HorizontalOptions="Fill"
+                    FontFamily="PoppinsBold" FontSize="12" CharacterSpacing="0.5" 
+                    VerticalTextAlignment="Center" VerticalOptions="Center"/>
+            </Grid>
+        </Border>
+
+        <Border Margin="16,0,16,0" StrokeShape="RoundRectangle 5" Stroke="#EBF0FF">
+            <Grid ColumnDefinitions="50,*">
+                <Image Grid.Column="0" Source="password.svg" HeightRequest="24" WidthRequest="24"
+                       Margin="12" HorizontalOptions="Start"/>
+                <cc:BorderlessEntry Grid.Column="1" Placeholder="Password Again" HorizontalOptions="Fill"
+                    FontFamily="PoppinsBold" FontSize="12" CharacterSpacing="0.5" 
+                    VerticalTextAlignment="Center" VerticalOptions="Center"/>
+            </Grid>
+        </Border>
+
+        <Button Text="Sign Up" FontFamily="PoppinsBold" FontSize="14"
+                Margin="16,16,16,21" Padding="16"/>
+
+
+        <Label HorizontalOptions="Center" >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Have an account? " CharacterSpacing="0.5" FontSize="12" FontFamily="PoppinsRegular" TextColor="#9098B1"/>
+                    <Span Text="Sign In" FontSize="12" CharacterSpacing="0.5" TextColor="{StaticResource Primary}" FontFamily="PoppinsBold"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </VerticalStackLayout>
+</ContentPage>

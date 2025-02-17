@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_ECommerce.Pages.HomePage"
+             xmlns:cc="clr-namespace:MAUI_ECommerce.Pages.Controls"
+             Title="HomePage">
+    <Grid RowDefinitions="auto, *">
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="0">
+               
+
+                <Border StrokeShape="RoundRectangle 5" Margin="16" Padding="0" HeightRequest="206">
+                    <Grid Margin="0" Padding="0">
+                        <Image Source="promotionimage.png" Aspect="AspectFill"/>
+
+                        <Label Text="Super Flash Sale 50% Off" FontFamily="PoppinsBold" TextColor="{StaticResource White}"
+                           FontSize="24" CharacterSpacing="0.5" Margin="24,32,100,29"/>
+
+                        <HorizontalStackLayout x:Name="promotionPerdiod" VerticalOptions="End" Margin="24,0,0,32">
+                            <Border HeightRequest="41" WidthRequest="42" BackgroundColor="{StaticResource White}" StrokeShape="RoundRectangle 5">
+                                <Label Text="08" TextColor="#223263" FontSize="16" HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                            </Border>
+                            <Label Text=":" FontSize="14" HorizontalTextAlignment="Center" Margin="4,0" TextColor="{StaticResource White}"
+                               VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                            <Border HeightRequest="41" WidthRequest="42" BackgroundColor="{StaticResource White}" StrokeShape="RoundRectangle 5">
+                                <Label Text="34" TextColor="#223263" FontSize="16" HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                            </Border>
+                            <Label Text=":" FontSize="14" HorizontalTextAlignment="Center" Margin="4,0" TextColor="{StaticResource White}"
+                               VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                            <Border HeightRequest="41" WidthRequest="42" BackgroundColor="{StaticResource White}" StrokeShape="RoundRectangle 5">
+                                <Label Text="52" TextColor="#223263" FontSize="16" HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                            </Border>
+                        </HorizontalStackLayout>
+
+                    </Grid>
+                </Border>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="8" Margin="0,0,0,24">
+                    <Ellipse HeightRequest="8" WidthRequest="8" BackgroundColor="#EBF0FF"/>
+                    <Ellipse HeightRequest="8" WidthRequest="8" BackgroundColor="#EBF0FF"/>
+                    <Ellipse HeightRequest="8" WidthRequest="8" BackgroundColor="{StaticResource Primary}"/>
+                    <Ellipse HeightRequest="8" WidthRequest="8" BackgroundColor="#EBF0FF"/>
+                    <Ellipse HeightRequest="8" WidthRequest="8" BackgroundColor="#EBF0FF"/>
+                </HorizontalStackLayout>
+
+                <Grid Margin="16,0,16,12">
+                    <Label Text="Category" TextColor="#223263" FontSize="14" HorizontalOptions="Start"
+                       VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+
+                    <Label Text="More Category" TextColor="{StaticResource Primary}" FontSize="14" HorizontalOptions="End"
+                       VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                </Grid>
+
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
+                        VerticalOptions="Center" Margin="0" Padding="0">
+                    <StackLayout Orientation="Horizontal" Margin="16,0" Spacing="12">
+                        <VerticalStackLayout>
+                            <Border HeightRequest="70" WidthRequest="70" StrokeShape="RoundRectangle 66" Padding="0"
+                            Margin="0" Stroke="#EBF0FF">
+                                <Image Source="shirt.svg" HeightRequest="24" WidthRequest="24"/>
+                            </Border>
+                            <Label HeightRequest="30" WidthRequest="70" Margin="0,8,0,0"  Text="Man shirt" FontSize="10" FontFamily="PoppinsRegular" TextColor="#9098B1" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Border HeightRequest="70" WidthRequest="70" StrokeShape="RoundRectangle 66" Padding="0"
+                            Margin="0" Stroke="#EBF0FF">
+                                <Image Source="dress.svg" HeightRequest="24" WidthRequest="24"/>
+                            </Border>
+                            <Label HeightRequest="30" WidthRequest="70" Margin="0,8,0,0"  Text="Dress" FontSize="10" FontFamily="PoppinsRegular" TextColor="#9098B1" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Border HeightRequest="70" WidthRequest="70" StrokeShape="RoundRectangle 66" Padding="0"
+                Margin="0" Stroke="#EBF0FF">
+                                <Image Source="manbag.svg" HeightRequest="24" WidthRequest="24"/>
+                            </Border>
+                            <Label HeightRequest="30" WidthRequest="70" Margin="0,8,0,0"  Text="Man Work Equipment" FontSize="10" FontFamily="PoppinsRegular" TextColor="#9098B1" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Border HeightRequest="70" WidthRequest="70" StrokeShape="RoundRectangle 66" Padding="0"
+                Margin="0" Stroke="#EBF0FF">
+                                <Image Source="womanbag.svg" HeightRequest="24" WidthRequest="24"/>
+                            </Border>
+                            <Label HeightRequest="30" WidthRequest="70" Margin="0,8,0,0"  Text="Woman Bag" FontSize="10" FontFamily="PoppinsRegular" TextColor="#9098B1" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Border HeightRequest="70" WidthRequest="70" StrokeShape="RoundRectangle 66" Padding="0"
+                Margin="0" Stroke="#EBF0FF">
+                                <Image Source="manshoes.svg" HeightRequest="24" WidthRequest="24"/>
+                            </Border>
+                            <Label HeightRequest="30" WidthRequest="70" Margin="0,8,0,0"  Text="Man Shoes" FontSize="10" FontFamily="PoppinsRegular" TextColor="#9098B1" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Border HeightRequest="70" WidthRequest="70" StrokeShape="RoundRectangle 66" Padding="0"
+                Margin="0" Stroke="#EBF0FF">
+                                <Image Source="shirt.svg" HeightRequest="24" WidthRequest="24"/>
+                            </Border>
+                            <Label HeightRequest="30" WidthRequest="70" Margin="0,8,0,0"  Text="Man shirt" FontSize="10" FontFamily="PoppinsRegular" TextColor="#9098B1" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </StackLayout>
+                </ScrollView>
+
+                <Grid Margin="16,24,16,12">
+                    <Label Text="Flash Sale" TextColor="#223263" FontSize="14" HorizontalOptions="Start"
+               VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+
+                    <Label Text="See More" TextColor="{StaticResource Primary}" FontSize="14" HorizontalOptions="End"
+               VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                </Grid>
+
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
+                        VerticalOptions="Center" Margin="0" Padding="0">
+                    <StackLayout Orientation="Horizontal" Margin="16,0" Spacing="16">
+                        <cc:ProductCard />
+                        <cc:ProductCard />
+                        <cc:ProductCard />
+                    </StackLayout>
+                </ScrollView>
+
+                <Grid Margin="16,24,16,12">
+                    <Label Text="Flash Sale" TextColor="#223263" FontSize="14" HorizontalOptions="Start"
+                       VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                    <Label Text="See More" TextColor="{StaticResource Primary}" FontSize="14" HorizontalOptions="End"
+                       VerticalTextAlignment="Center" FontFamily="PoppinsBold" CharacterSpacing="0.5"/>
+                </Grid>
+
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
+                VerticalOptions="Center" Margin="0" Padding="0">
+                    <StackLayout Orientation="Horizontal" Margin="16,0" Spacing="16">
+                        <cc:ProductCard />
+                        <cc:ProductCard />
+                        <cc:ProductCard />
+                    </StackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+        </ScrollView>
+        <Grid Grid.Row="0" Margin="16" ColumnDefinitions="*, auto, auto">
+            <Border Margin="0" StrokeShape="RoundRectangle 5" Stroke="#EBF0FF">
+                <Grid ColumnDefinitions="50,*">
+                    <Image Grid.Column="0" Source="search.png" HeightRequest="12.5" WidthRequest="12.5"
+            Margin="12" HorizontalOptions="Start"/>
+                    <cc:BorderlessEntry Grid.Column="1" Placeholder="Search Product" HorizontalOptions="FillAndExpand"
+                             FontFamily="PoppinsBold" FontSize="12" CharacterSpacing="0.5" 
+                             VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <Image Grid.Column="1" Source="love.svg" HeightRequest="24" WidthRequest="24"
+        Margin="16,0" HorizontalOptions="Start"/>
+
+            <Image Grid.Column="2" Source="notification.svg" HeightRequest="24" WidthRequest="24"
+        Margin="0" HorizontalOptions="Start"/>
+        </Grid>
+
+        <BoxView VerticalOptions="End" HeightRequest="1" BackgroundColor="#EBF0FF" />
+
+    </Grid>
+</ContentPage>
