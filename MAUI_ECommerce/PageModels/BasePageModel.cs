@@ -1,21 +1,19 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MAUI_ECommerce.Services;
 
 namespace MAUI_ECommerce.PageModels;
 
 public abstract partial class BasePageModel : ObservableObject
 {
     [ObservableProperty]
-    bool _isBusy;
+    private bool _isBusy;
 
     [RelayCommand]
-    protected abstract Task LoadAsync(Nullable<int> id = null);
+    protected abstract Task LoadAsync(Nullable<int> id = default);
 
-    protected INavigationService _navigationService;
+    // Initialisation avec default! pour indiquer à l'analyseur que l'injection se fera ultérieurement.
+    protected readonly INavigationService _navigationService = default!;
+
     protected abstract void ClearData();
 }

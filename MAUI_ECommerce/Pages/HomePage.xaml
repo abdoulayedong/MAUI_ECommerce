@@ -8,7 +8,6 @@
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Spacing="0">
                
-
                 <Border StrokeShape="RoundRectangle 5" Margin="16" Padding="0" HeightRequest="206">
                     <Grid Margin="0" Padding="0">
                         <Image Source="promotionimage.png" Aspect="AspectFill"/>
@@ -148,10 +147,10 @@
             </Border>
 
             <Image Grid.Column="1" Source="love.svg" HeightRequest="24" WidthRequest="24"
-        Margin="16,0" HorizontalOptions="Start"/>
+                   Margin="16,0" HorizontalOptions="Start"/>
 
             <Image Grid.Column="2" Source="notification.svg" HeightRequest="24" WidthRequest="24"
-        Margin="0" HorizontalOptions="Start"/>
+                   Margin="0" HorizontalOptions="Start"/>
         </Grid>
 
         <BoxView VerticalOptions="End" HeightRequest="1" BackgroundColor="#EBF0FF" />

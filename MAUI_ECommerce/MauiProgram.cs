@@ -1,7 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using epj.RouteGenerator;
+using MAUI_ECommerce.PageModels;
+using MAUI_ECommerce.Pages;
+using MAUI_ECommerce.Services;
+using Microsoft.Extensions.Logging;
 
 namespace MAUI_ECommerce
 {
+    [AutoRoutes("Page")]
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
@@ -21,6 +26,10 @@ namespace MAUI_ECommerce
                     fonts.AddFont("Poppins-SemiBold.ttf", "PoppinsSemiBold");
                     fonts.AddFont("Poppins-Thin.ttf", "PoppinsThin");
                 });
+
+            builder.Services.AddSingleton<HomePage>();
+            builder.Services.AddSingleton<HomePageModel>();
+            builder.Services.AddSingleton<INavigationService, NavigationService>();
 
 
 #if DEBUG
