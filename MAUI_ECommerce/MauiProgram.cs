@@ -1,6 +1,7 @@
 ﻿using epj.RouteGenerator;
 using MAUI_ECommerce.PageModels;
 using MAUI_ECommerce.Pages;
+using MAUI_ECommerce.Repositories;
 using MAUI_ECommerce.Services;
 using Microsoft.Extensions.Logging;
 
@@ -27,9 +28,12 @@ namespace MAUI_ECommerce
                     fonts.AddFont("Poppins-Thin.ttf", "PoppinsThin");
                 });
 
-            builder.Services.AddSingleton<HomePage>();
-            builder.Services.AddSingleton<HomePageModel>();
+            builder.Services.AddTransient<HomePage>();
+            builder.Services.AddTransient<HomePageModel>();
             builder.Services.AddSingleton<INavigationService, NavigationService>();
+            builder.Services.AddSingleton<IProductRepository, ProductRepository>();
+            builder.Services.AddSingleton<IProductService, ProductService>();
+
 
 
 #if DEBUG

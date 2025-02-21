@@ -10,4 +10,14 @@ public partial class HomePage : ContentPage
 
         BindingContext = homePageModel;
     }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (BindingContext is BasePageModel viewModel)
+        {
+            await viewModel.LoadCommand.ExecuteAsync(null);
+        }
+    }
 }

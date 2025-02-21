@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI_ECommerce.Pages.HomePage"
              xmlns:cc="clr-namespace:MAUI_ECommerce.Pages.Controls"
+             xmlns:dto="clr-namespace:MAUI_ECommerce.DTOs"
              Title="HomePage">
     <Grid RowDefinitions="auto, *">
         <ScrollView Grid.Row="1">
@@ -110,12 +111,21 @@
                 </Grid>
 
                 <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
-                        VerticalOptions="Center" Margin="0" Padding="0">
-                    <StackLayout Orientation="Horizontal" Margin="16,0" Spacing="16">
-                        <cc:ProductCard />
-                        <cc:ProductCard />
-                        <cc:ProductCard />
-                    </StackLayout>
+                            VerticalOptions="Center" Margin="16,0" Padding="0">
+                    <CollectionView ItemsSource="{Binding FlashSaleProducts}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="16"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="dto:ProductPreviewDTO">
+                                <cc:ProductCard ProductName="{Binding Name}"
+                                ImageSource="{Binding ImageUrl}"
+                                CurrentPrice="{Binding DiscountPrice}"
+                                OriginalPrice="{Binding OriginalPrice}"
+                                Discount="{Binding DiscountPercentage}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </ScrollView>
 
                 <Grid Margin="16,24,16,12">
@@ -126,12 +136,21 @@
                 </Grid>
 
                 <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
-                VerticalOptions="Center" Margin="0" Padding="0">
-                    <StackLayout Orientation="Horizontal" Margin="16,0" Spacing="16">
-                        <cc:ProductCard />
-                        <cc:ProductCard />
-                        <cc:ProductCard />
-                    </StackLayout>
+                            VerticalOptions="Center" Margin="16,0" Padding="0">
+                    <CollectionView ItemsSource="{Binding MegaSaleProducts}">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="16"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="dto:ProductPreviewDTO">
+                                    <cc:ProductCard ProductName="{Binding Name}"
+                                                    ImageSource="{Binding ImageUrl}"
+                                                    CurrentPrice="{Binding DiscountPrice}"
+                                                    OriginalPrice="{Binding OriginalPrice}"
+                                                    Discount="{Binding DiscountPercentage}"/>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
                 </ScrollView>
             </VerticalStackLayout>
         </ScrollView>

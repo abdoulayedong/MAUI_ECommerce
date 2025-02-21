@@ -31,21 +31,20 @@ public partial class ProductCard : ContentView
 
     public string CurrentPrice
     {
-        get => (string)GetValue(ImageSourceProperty);
-        set => SetValue(ImageSourceProperty, value);
+        get => (string)GetValue(CurrentPriceProperty);
+        set => SetValue(CurrentPriceProperty, value);
     }
 
     public string OriginalPrice
     {
-        get => (string)GetValue(ProductNameProperty);
-        set => SetValue(ProductNameProperty, value);
+        get => (string)GetValue(OriginalPriceProperty);
+        set => SetValue(OriginalPriceProperty, value);
     }
     public string Discount
     {
         get => (string)GetValue(DiscountProperty);
         set => SetValue(DiscountProperty, value);
     }
-
 
     public ProductCard()
 	{

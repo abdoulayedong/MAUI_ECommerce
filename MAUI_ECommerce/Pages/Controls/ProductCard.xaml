@@ -1,46 +1,37 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MAUI_ECommerce.Pages.Controls.ProductCard">
+             x:Class="MAUI_ECommerce.Pages.Controls.ProductCard"
+             x:Name="this">
 
     <Border x:Name="productCardBorder" StrokeShape="RoundRectangle 5" 
-            Stroke="#EBF0FF" HeightRequest="238" WidthRequest="141">
+            Stroke="#EBF0FF" HeightRequest="238" WidthRequest="141" BindingContext="{x:Reference this}">
         <VerticalStackLayout Spacing="7" Margin="0,16">
             <Border StrokeShape="RoundRectangle 5" Stroke="Transparent" VerticalOptions="Start" Margin="16,0,16,0">
-                <Image Source="nikeair.png" HeightRequest="109" WidthRequest="109"/>
+                <Image Source="{Binding ImageSource}" HeightRequest="109" WidthRequest="109"/>
             </Border>
-            <Label Text="FS - Nike Air Max 270 Reactive Multimode" Margin="16,0" LineHeight="1.05" LineBreakMode="TailTruncation" MaxLines="2"
+            <Label Text="{Binding ProductName}" TextTransform="Uppercase" Margin="16,0" LineHeight="1.05" LineBreakMode="TailTruncation" MaxLines="2"
                     TextColor="#223263" FontSize="12" CharacterSpacing="0.5" FontFamily="PoppinsBold"/>
-            <Label Margin="16,0" LineHeight="1.05" LineBreakMode="TailTruncation" MaxLines="2"
-                     >
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="190 000"
-                               TextColor="{StaticResource Primary}" FontSize="12"
-                               CharacterSpacing="0.5" FontFamily="PoppinsBold"/>
-                        <Span Text=" FCFA"
-                               TextColor="{StaticResource Primary}" FontSize="12"
-                               CharacterSpacing="0.5" FontFamily="PoppinsBold"/>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            <Label Margin="16,0" FontSize="12" CharacterSpacing="0.5" LineHeight="1.05" 
+                   FontFamily="PoppinsBold" MaxLines="2" TextColor="{StaticResource Primary}"
+                   Text="{Binding CurrentPrice, StringFormat='{0:N0} FCFA'}"/>
 
             <HorizontalStackLayout Margin="16,0" Spacing="8">
                 <Label LineHeight="1.05">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="190 000"
-TextColor="#9098B1" FontSize="10" TextDecorations="Strikethrough"
-CharacterSpacing="0.5" FontFamily="PoppinsRegular"/>
+                            <Span Text="{Binding OriginalPrice, StringFormat='{0:### ###}'}"
+                                  TextColor="#9098B1" FontSize="10" TextDecorations="Strikethrough"
+                                  CharacterSpacing="0.5" FontFamily="PoppinsRegular"/>        
                             <Span Text=" FCFA"
-TextColor="#9098B1" FontSize="10"
-CharacterSpacing="0.5" FontFamily="PoppinsRegular"/>
+                                  TextColor="#9098B1" FontSize="10"
+                                  CharacterSpacing="0.5" FontFamily="PoppinsRegular"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
 
-                <Label  HorizontalOptions="Start" Text="24% Off" LineHeight="1.05"
-    TextColor="#FB7181" FontSize="10" VerticalTextAlignment="Center" CharacterSpacing="0.5" FontFamily="PoppinsBold"/>
+                <Label  HorizontalOptions="Start" Text="{Binding Discount, StringFormat='{0} % Off'}" LineHeight="1.05"
+                        TextColor="#FB7181" FontSize="10" VerticalTextAlignment="Center" CharacterSpacing="0.5" FontFamily="PoppinsBold"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </Border>
