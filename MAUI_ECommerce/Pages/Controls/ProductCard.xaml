@@ -2,21 +2,33 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI_ECommerce.Pages.Controls.ProductCard"
+             xmlns:cc="clr-namespace:MAUI_ECommerce.Pages.Controls"
              x:Name="this">
 
     <Border x:Name="productCardBorder" StrokeShape="RoundRectangle 5" 
             Stroke="#EBF0FF" HeightRequest="238" WidthRequest="141" BindingContext="{x:Reference this}">
-        <VerticalStackLayout Spacing="7" Margin="0,16">
-            <Border StrokeShape="RoundRectangle 5" Stroke="Transparent" VerticalOptions="Start" Margin="16,0,16,0">
+        <VerticalStackLayout Spacing="7" Margin="16">
+            <Border StrokeShape="RoundRectangle 5" Stroke="Transparent" VerticalOptions="Start" Margin="0">
                 <Image Source="{Binding ImageSource}" HeightRequest="109" WidthRequest="109"/>
             </Border>
-            <Label Text="{Binding ProductName}" TextTransform="Uppercase" Margin="16,0" LineHeight="1.05" LineBreakMode="TailTruncation" MaxLines="2"
+            <Label Text="{Binding ProductName}" TextTransform="Uppercase" Margin="0" LineHeight="1.05" LineBreakMode="TailTruncation" MaxLines="2"
                     TextColor="#223263" FontSize="12" CharacterSpacing="0.5" FontFamily="PoppinsBold"/>
-            <Label Margin="16,0" FontSize="12" CharacterSpacing="0.5" LineHeight="1.05" 
-                   FontFamily="PoppinsBold" MaxLines="2" TextColor="{StaticResource Primary}"
-                   Text="{Binding CurrentPrice, StringFormat='{0:N0} FCFA'}"/>
+            
+            <cc:StarRatingControl
+                HorizontalOptions="Start"
+                    Value="4"
+                    Maximum="5"
+                    StarColor="#FFD700"
+                    EmptyStarColor="#D3D3D3"
+                    HeightRequest="12"
+                    WidthRequest="68" 
+                IsInteractive="False"/>
 
-            <HorizontalStackLayout Margin="16,0" Spacing="8">
+            <Label Margin="0" FontSize="12" CharacterSpacing="0.5" LineHeight="1.05" 
+                FontFamily="PoppinsBold" MaxLines="2" TextColor="{StaticResource Primary}"
+                Text="{Binding CurrentPrice, StringFormat='{0:N0} FCFA'}"/>
+
+            <HorizontalStackLayout Margin="0" Spacing="8">
                 <Label LineHeight="1.05">
                     <Label.FormattedText>
                         <FormattedString>

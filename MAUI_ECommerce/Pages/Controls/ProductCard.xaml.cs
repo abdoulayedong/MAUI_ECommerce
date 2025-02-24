@@ -2,6 +2,18 @@ namespace MAUI_ECommerce.Pages.Controls;
 
 public partial class ProductCard : ContentView
 {
+    public static readonly BindableProperty ImageWidthRequestProperty = BindableProperty.Create(
+       nameof(ImageWidthRequest), typeof(double), typeof(ProductCard));
+
+    public static readonly BindableProperty ImageHeightRequestProperty = BindableProperty.Create(
+        nameof(ImageHeightRequest), typeof(double), typeof(ProductCard));
+
+    public static readonly new BindableProperty WidthRequestProperty = BindableProperty.Create(
+        nameof(WidthRequest), typeof(double), typeof(ProductCard));
+
+    public static readonly new BindableProperty HeightRequestProperty = BindableProperty.Create(
+        nameof(HeightRequest), typeof(double), typeof(ProductCard));
+
     public static BindableProperty ProductNameProperty = BindableProperty.Create(
         nameof(ProductName), typeof(string), typeof(ProductCard));
 
@@ -44,6 +56,28 @@ public partial class ProductCard : ContentView
     {
         get => (string)GetValue(DiscountProperty);
         set => SetValue(DiscountProperty, value);
+    }
+
+    public new double WidthRequest
+    {
+        get => (double)GetValue(WidthRequestProperty);
+        set => SetValue(WidthRequestProperty, value);
+    }
+    public new double HeightRequest
+    {
+        get => (double)GetValue(HeightRequestProperty);
+        set => SetValue(HeightRequestProperty, value);
+    }
+
+    public double ImageWidthRequest
+    {
+        get => (double)GetValue(ImageWidthRequestProperty);
+        set => SetValue(ImageWidthRequestProperty, value);
+    }
+    public double ImageHeightRequest
+    {
+        get => (double)GetValue(ImageHeightRequestProperty);
+        set => SetValue(ImageHeightRequestProperty, value);
     }
 
     public ProductCard()

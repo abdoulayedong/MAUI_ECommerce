@@ -21,15 +21,24 @@ public class HomePageModel : BasePageModel
 
     protected override void ClearData()
     {
-
+        FlashSaleProducts.Clear();
+        MegaSaleProducts.Clear();
+        RecommendedProducts.Clear();
     }
 
     protected override async Task LoadAsync(int? id = null)
     {
-        var products = await _productService.GetProductPreviews();
+        if (FlashSaleProducts.Count == 0 )
+        {
+            var products = await _productService.GetProductPreviews();
 
-        products.Take(3).ToList().ForEach(FlashSaleProducts.Add);
-        products.TakeLast(3).ToList().ForEach(MegaSaleProducts.Add);
-        products.Take(new Range(4, 6)).ToList().ForEach(RecommendedProducts.Add);
+            await Task.Run(() =>
+            {
+                products.Take(3).ToList().ForEach(FlashSaleProducts.Add);
+                products.TakeLast(3).ToList().ForEach(MegaSaleProducts.Add);
+                products.Take(new Range(2, 6)).ToList().ForEach(RecommendedProducts.Add);
+            });
+        }
+
     }
 }

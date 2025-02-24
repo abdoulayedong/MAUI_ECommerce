@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_ECommerce.Pages.Controls.CategoryItemControl"
+             x:Name="this">
+    <VerticalStackLayout BindingContext="{x:Reference this}">
+        <VerticalStackLayout.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding TapCommand}"/>
+        </VerticalStackLayout.GestureRecognizers>
+        <Border HeightRequest="70" WidthRequest="70" StrokeShape="RoundRectangle 66" Padding="0"
+                Margin="0" Stroke="#EBF0FF">
+            <Image Source="{Binding Icon}" HeightRequest="24" WidthRequest="24"/>
+        </Border>
+        <Label HeightRequest="30" WidthRequest="70" Margin="0,8,0,0"  Text="{Binding Name}" 
+               FontSize="10" FontFamily="PoppinsRegular" TextColor="#9098B1" 
+               HorizontalTextAlignment="Center"/>
+    </VerticalStackLayout>
+</ContentView>
